@@ -1,0 +1,16 @@
+<div class="container" ng-controller="registerController as regCtrl">
+    <h1> REGISTER </h1>
+
+    <form >
+        <label>Name:</label>
+        <input  class="form-control" type="text" placeholder="name" ng-model="regCtrl.userDetails.name"><br>
+        <label>Username:</label>
+        <input  class="form-control" type="text" placeholder="username" ng-model="regCtrl.userDetails.username"><br>
+        <label>Password:</label>
+        <input class="form-control" type="password" placeholder="password" ng-model="regCtrl.userDetails.password"><br>
+
+        <button class="btn btn-warning" ng-click="regCtrl.display(regCtrl.userDetails)" >REGISTER</button>
+
+    </form>
+
+</div>

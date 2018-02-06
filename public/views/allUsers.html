@@ -1,0 +1,35 @@
+<div ng-controller="allUserController as ctrl">
+
+    <div class="container" style="padding-bottom: 10px; background-color: antiquewhite" >
+
+    <input type="text" ng-model="ctrl.contact.name" placeholder="name">
+    <input type="text" ng-model="ctrl.contact.username" placeholder="username">
+    <input type="password" ng-model="ctrl.contact.password" placeholder="password">
+    <button class="btn btn-primary" ng-click="ctrl.addUser(ctrl.contact)">ADD</button>
+     <button class="btn btn-default" ng-click="ctrl.updateUser(ctrl.contact._id)">UPDATE</button>
+    </div>
+
+    <button class="btn btn-secondary" ng-click="ctrl.allUsers()">ALL</button>
+
+    <table class="table">
+        <thead>
+            <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>username</th>
+            </tr>
+        </thead>
+
+        <tbody>
+                    <tr ng-repeat="userDetail in ctrl.userDetails">
+                    <td>{{ userDetail._id }}</td>
+                    <td>{{ userDetail.name }} </td>
+                    <td>{{ userDetail.username }}</td>
+                    <td><button class="btn btn-warning" ng-click="ctrl.edit(userDetail._id)">edit</button></td>
+                    <td><button class="btn btn-danger" ng-click="ctrl.removeUser(userDetail._id)">remove</button></td>
+                    </tr>
+        </tbody>
+
+    </table>
+
+</div>

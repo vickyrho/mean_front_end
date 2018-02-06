@@ -1,8 +1,8 @@
 angular.module('myApp').controller('registerController',registerController);
 
-registerController.$inject=['$scope','$http','registerService'];
+registerController.$inject=['$scope','$http','registerService','$state'];
 
-function registerController($scope,$http,registerService) {
+function registerController($scope,$http,registerService,$state) {
 
 
 
@@ -12,6 +12,7 @@ function registerController($scope,$http,registerService) {
 
     registerService.postItem(userDetails).then(function(data){
         console.log(data);
+        $state.go('login');
     });
 
     }

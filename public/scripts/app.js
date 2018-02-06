@@ -33,10 +33,23 @@ var states = [
                 visible:"true"
             }
         }
+    },
+    {
+
+        name:'allUser',
+        state: {
+            url: '/allUser',
+            templateUrl: '../views/allUsers.html',
+            data:{
+                text:"allUser",
+                visible:"true"
+            }
+        }
     }
 ];
 
-var app = angular.module('myApp',['ui.router'])
+var app = angular.module('myApp',['ui.router','ngCookies'])
+
 
         .config(function($stateProvider,$urlRouterProvider,$locationProvider){
             $urlRouterProvider.otherwise('/');
@@ -45,9 +58,6 @@ var app = angular.module('myApp',['ui.router'])
                 $stateProvider.state(state.name,state.state);
             });
 
-            $locationProvider.html5Mode({
-                enabled:true,
-                required: false
-            });
+
 
         });
